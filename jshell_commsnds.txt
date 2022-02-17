@@ -1,0 +1,97 @@
+
+swagatadutta@PNQ-SDUTTA ~ % jhell
+zsh: command not found: jhell
+swagatadutta@PNQ-SDUTTA ~ % jshell
+|  Welcome to JShell -- Version 11.0.10
+|  For an introduction type: /help intro
+
+jshell> System.out.println("Welcome to jshell")
+Welcome to jshell
+
+jshell> 2+3
+$2 ==> 5
+
+jshell> $2+6
+$3 ==> 11
+
+jshell> System.out.println($3)
+11
+
+jshell> true || false
+$5 ==> true
+
+jshell> 8>9
+$6 ==> false
+
+jshell> int j
+j ==> 0
+
+jshell> /set feedback
+|  /set feedback normal
+|
+|  Available feedback modes:
+|     concise
+|     normal
+|     silent
+|     verbose
+
+jshell> /set feedback verbose
+|  Feedback mode: verbose
+
+jshell> int k=1
+k ==> 1
+|  created variable k : int
+
+jshell> k++
+$9 ==> 1
+|  created scratch variable $9 : int
+
+jshell> k
+k ==> 2
+|  value of k : int
+
+jshell> public void show(){
+   ...> int num =9;
+   ...> System.out.println("Hello "+num);
+   ...> }
+|  created method show()
+
+jshell> show()
+Hello 9
+
+jshell> /list
+
+   1 : System.out.println("Welcome to jshell")
+   2 : 2+3
+   3 : $2+6
+   4 : System.out.println($3)
+   5 : true || false
+   6 : 8>9
+   7 : int j;
+   8 : int k=1;
+   9 : k++
+  10 : k
+  11 : public void show(){
+       int num =9;
+       System.out.println("Hello "+num);
+       }
+  12 : show()
+
+jshell> /edit 11
+|  modified method show()
+|    update overwrote method show()
+
+jshell> show()
+Hello! the number is 9
+
+jshell> /vars
+|    int $2 = 5
+|    int $3 = 11
+|    boolean $5 = true
+|    boolean $6 = false
+|    int j = 0
+|    int k = 2
+|    int $9 = 1
+
+jshell> /methods
+|    void show()
