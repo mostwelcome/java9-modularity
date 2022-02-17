@@ -2,7 +2,7 @@
 
 1. <b><i>The JAVA Platform module system:</b></i>
 
-The defining feature for Java 9 is an all-new module system. When codebases grow larger, the odds of creating complicated, tangled “spaghetti code” increase exponentially. There are two fundamental problems: It is hard to truly encapsulate code, and there is no notion of explicit dependencies between different parts (JAR files) of a system. Every public class can be accessed by any other public class on the classpath, leading to inadvertent usage of classes that weren't meant to be public API. Furthermore, the classpath itself is problematic: How do you know whether all the required JARs are there, or if there are duplicate entries? The module system addresses both issues.
+The defining feature for Java 9 is an all-new module system. When code bases grow larger, the odds of creating complicated, tangled “spaghetti code” increase exponentially. There are two fundamental problems: It is hard to truly encapsulate code, and there is no notion of explicit dependencies between different parts (JAR files) of a system. Every public class can be accessed by any other public class on the classpath, leading to inadvertent usage of classes that weren't meant to be public API. Furthermore, the classpath itself is problematic: How do you know whether all the required JARs are there, or if there are duplicate entries? The module system addresses both issues.
 
 Modular JAR files contain an additional module descriptor. In this module descriptor, dependencies on other modules are expressed through`requires` statements. Additionally, `exports` statements control which packages are accessible to other modules. All non-exported packages are encapsulated in the module by default. Here's an example of a module descriptor, which lives in `module-info.java`:
 
@@ -27,7 +27,7 @@ Many languages already feature an interactive Read-Eval-Print-Loop, and Java now
 
     `Set<Integer> ints = Set.of(1, 2, 3);
     List<String> strings = List.of("first", "second");`
-Besides being shorter and nicer to read, these methods also relieve you from having to pick a specific collection implementation. In fact, the collection implementations returned from the factory methods are highly optimized for the number of elements you put in. That's possible because they're immutable: adding items to these collections after creation results in an `UnsupportedOperationException`.
+Besides, being shorter and nicer to read, these methods also relieve you from having to pick a specific collection implementation. In fact, the collection implementations returned from the factory methods are highly optimized for the number of elements you put in. That's possible because they're immutable: adding items to these collections after creation results in an `UnsupportedOperationException`.
 
 6. <b><i>Stream API improvements</b></i>
 
@@ -37,7 +37,7 @@ Besides being shorter and nicer to read, these methods also relieve you from hav
 `IntStream.iterate(1, i -> i < 100, i -> i + 1).forEach(System.out::println);`
 The second argument is a lambda that returns true until the current element in the IntStream becomes 100. This simple example therefore prints the integers 1 until 99 on the console.
 
-Besides these additions on Stream itself, the integration between Optional and Stream has been improved. It's now possible to turn an Optional object into a (possibly empty) Stream with the new `stream` method on Optional:
+Besides, these additions on Stream itself, the integration between Optional and Stream has been improved. It's now possible to turn an Optional object into a (possibly empty) Stream with the new `stream` method on Optional:
 
 Stream<Integer> s = Optional.of(1).stream();
 Turning an Optional into a Stream is especially useful when composing complex Stream pipelines.
